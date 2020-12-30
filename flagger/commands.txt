@@ -1,0 +1,21 @@
+- Implantar Flagger no Istio
+
+	https://docs.flagger.app/install/flagger-install-on-kubernetes
+
+	(a) Add Flagger Helm repository:
+	
+	helm repo add flagger https://flagger.app
+
+	(b) Install Flagger's Canary CRD:
+
+	kubectl apply -f https://raw.githubusercontent.com/weaveworks/flagger/master/artifacts/flagger/crd.yaml
+
+	(c) Deploy Flagger for Istio:	
+
+	helm upgrade -i flagger flagger/flagger --namespace=istio-system --set crd.create=false --set meshProvider=istio --set metricsServer=http://prometheus:9090
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+- Ingress Gateway
+
+	kubectl apply -f gateway_flagger_istio.yaml
