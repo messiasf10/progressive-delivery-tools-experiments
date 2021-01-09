@@ -1,0 +1,14 @@
+# HELP info Flagger version and mesh provider information
+# TYPE info gauge
+
+# HELP canary_duration_seconds Seconds spent performing canary analysis
+# TYPE canary_duration_seconds histogram
+
+# HELP canary_total Total number of canary object
+# TYPE canary_total gauge
+
+# HELP canary_status Last canary analysis result 0 - running, 1 - successful, 2 - failed
+# TYPE canary_status gauge
+
+# HELP canary_weight The virtual service destination weight current value
+# TYPE canary_weight gauge
